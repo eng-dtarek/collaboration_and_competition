@@ -1,6 +1,7 @@
 ## Learning Algorithm:
 
-In order to build an agent that is able to solve the problem, I used Multi Agent Deep Deterministic Policy Gradient approach which is described in this [paper](https://arxiv.org/abs/1706.02275)
+In order to build an agent that is able to solve the problem, I used Multi Agent Deep Deterministic Policy Gradient approach that provides interacting agents with the ability to collaboratively learn and adapt to the behaviour of other agents. See this [paper](https://arxiv.org/abs/1706.02275).
+Experience replay is used to allow the RL agent to learn from past experience. In this problem the actions are no longer a discrete set of simple directions. If we base our exploration mechanism on random uniform sampling, the direction actions would have a mean of zero, in turn cancelling each other out. This can cause the system to oscillate without making much progress. So the Ornstein-Uhlenbeck process is used to add a certain amount of noise to the action values at each timestep. This noise is correlated to previous noise, and therefore tends to stay in the same direction for longer durations without canceling itself out.
 
 
 ### Components:
@@ -17,7 +18,7 @@ In order to build an agent that is able to solve the problem, I used Multi Agent
 
 ### Hyperparameters: 
 
-I have tried different values of some parameters until solving the environment in 1027 episodes using the follwing parameters values:
+I began with the same Hyperparameters from my solution on the previous project [Continuous_Control](https://github.com/eng-dtarek/Continuous_Control). that provides good results. Then I tried different values of some parameters like BATCH_SIZE, TAU, LR_ACTOR, LR_CRITIC, and SIGMA until solving the environment in 1027 episodes using the follwing parameters values:
 
 * BUFFER_SIZE = int(1e5)  
 * BATCH_SIZE = 250        
