@@ -1,8 +1,8 @@
 ## Learning Algorithm:
 
-In order to build an agent that is able to solve the problem, I used Multi Agent Deep Deterministic Policy Gradient approach that provides interacting agents with the ability to collaboratively learn and adapt to the behaviour of other agents. See this [paper](https://arxiv.org/abs/1706.02275).
-Experience replay is used to allow the RL agent to learn from past experience. In this problem the actions are no longer a discrete set of simple directions. If we base our exploration mechanism on random uniform sampling, the direction actions would have a mean of zero, in turn cancelling each other out. This can cause the system to oscillate without making much progress. So the Ornstein-Uhlenbeck process is used to add a certain amount of noise to the action values at each timestep. This noise is correlated to previous noise, and therefore tends to stay in the same direction for longer durations without canceling itself out.
-
+In order to build these agents that are able to solve the problem, I used Multi Agent Deep Deterministic Policy Gradient approach that provides interacting agents with the ability to collaboratively learn and adapt to the behaviour of other agents. See this [paper](https://arxiv.org/abs/1706.02275).
+Experience replay is shared between the agents to learn from past experience. In this problem  we have two continuous actions, corresponding to movement toward (or away from) the net, and jumping. If we base our exploration mechanism on random uniform sampling, these would have a mean of zero, in turn cancelling each other out. This can cause the system to oscillate without making much progress. So the Ornstein-Uhlenbeck process is used to add a certain amount of noise to the action values at each timestep. This noise is correlated to previous noise, and therefore tends to stay in the same direction for longer durations without canceling itself out.
+The model architecture of critic and actors are taken from my solution of the previous project [Continuous_Control](https://github.com/eng-dtarek/Continuous_Control) except for batch normalization. 
 
 ### Components:
 
@@ -40,6 +40,7 @@ I began with the same Hyperparameters from my solution on the previous project [
 There are many ideas that can improve the agent's performance dramatically like the following:
 
 * Tuning the hyperparameters.
+* Adding Batch Normalization.
 * Changing the neural networks architectures.
 * Using prioritized experience Replay may improve the agent.
 * Using Proximal Policy Optimization.
