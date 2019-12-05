@@ -8,6 +8,8 @@ In this environment, two agents control rackets to bounce a ball over a net. If 
 
 The observation space consists of 8 variables corresponding to the position and velocity of the ball and racket. Each agent receives its own, local observation. Two continuous actions are available, corresponding to movement toward (or away from) the net, and jumping.
 
+## Solving the Environment
+
 The task is episodic, and in order to solve the environment, your agents must get an average score of +0.5 (over 100 consecutive episodes, after taking the maximum over both agents). Specifically,
 
 * After each episode, we add up the rewards that each agent received (without discounting), to get a score for each agent. This yields 2 (potentially different) scores. We then take the maximum of these 2 scores.
@@ -18,7 +20,7 @@ The environment is considered solved, when the average (over 100 episodes) of th
 
 ## Approach and solution
 
-The notebook Tennis.ipynb contains the code to set up the environment and the outer episode iteration to solve the reinforcement problem. My solution uses A multi agent variant of DDPG called Multi Agent Deep Deterministic Policy Gradient (MADDPG) is described in this [paper](https://arxiv.org/abs/1706.02275)
+The notebook Tennis.ipynb contains the code to set up the environment and the outer episode iteration to solve the reinforcement problem. My solution uses A multi agent variant of DDPG called Multi Agent Deep Deterministic Policy Gradient (MADDPG) is described in this [paper](https://arxiv.org/abs/1706.02275) along with experience replay and some noise. 
 
 ## Dependencies
 
