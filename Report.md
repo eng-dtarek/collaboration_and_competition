@@ -18,7 +18,7 @@ The model architectures of critic and actor are taken from my solution of the pr
 
 ### Hyperparameters: 
 
-I began with the same Hyperparameters from my solution on the previous project [Continuous_Control](https://github.com/eng-dtarek/Continuous_Control). that provides good results. Then I tried different values of some parameters like BATCH_SIZE, TAU, LR_ACTOR, LR_CRITIC, and SIGMA until solving the environment in 1027 episodes using the follwing parameters values:
+I began with the same hyperparameters from my solution on the previous project [Continuous_Control](https://github.com/eng-dtarek/Continuous_Control). Then I tried different values of some parameters like BATCH_SIZE, TAU, LR_ACTOR, LR_CRITIC, and SIGMA until solving the environment in 1027 episodes using the follwing values:
 
 * BUFFER_SIZE = int(1e5)  
 * BATCH_SIZE = 250        
